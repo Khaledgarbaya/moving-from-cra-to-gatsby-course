@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "gatsby develop"
+  },
+  "keywords": [],
+  "author": "Khaled Garbaya <kgarbaya@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gatsby": "^2.22.8",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}

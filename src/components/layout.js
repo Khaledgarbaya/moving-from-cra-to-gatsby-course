@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { logout, isLoggedIn } from '../services/auth'
+import '../css/index.css'
 const Layout = ({ children }) => {
   return (
     <div>

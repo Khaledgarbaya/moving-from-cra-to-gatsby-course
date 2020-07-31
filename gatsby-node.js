@@ -1,37 +1,33 @@
 const path = require('path')
-const pokemons = [
-  {
-    slug: 'bulbasaur',
-    name: 'Bulbasaur'
-  },
-  {
-    slug: 'ivysaur',
-    name: 'Ivysaur'
-  },
-  {
-    slug: 'charmander',
-    name: 'Charmander'
-  },
-  {
-    slug: 'squirtle',
-    name: 'Squirtle'
-  }
-]
-exports.createPages = ({ actions }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const PokemonTemplate = path.resolve(
     './src/templates/pokemon.js'
   )
-
-  pokemons.forEach(pokemon => {
-    createPage({
-      path: pokemon.slug,
-      component: PokemonTemplate,
-      context: {
-        name: pokemon.name
+  const result = await graphql(`
+    {
+      contentful {
+        pokemonCollection {
+          items {
+            slug
+            name
+          }
+        }
       }
-    })
-  })
+    }
+  `)
+  result.data.contentful.pokemonCollection.items.forEach(
+    pokemon => {
+      createPage({
+        path: pokemon.slug,
+        component: PokemonTemplate,
+        context: {
+          name: pokemon.name,
+          slug: pokemon.slug
+        }
+      })
+    }
+  )
 }
 
 exports.onCreatePage = async ({ page, actions }) => {

@@ -4,7 +4,7 @@ import { logout, isLoggedIn } from '../services/auth'
 import '../css/index.css'
 const Layout = ({ children }) => {
   return (
-    <div>
+    <div className="prose prose-xl">
       <h1>Gatsby Pokedex!</h1>
       {isLoggedIn() && (
         <button onClick={() => logout(() => {})}>
@@ -13,19 +13,44 @@ const Layout = ({ children }) => {
       )}
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link
+            className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+            to="/"
+          >
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link
+            className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+            to="/about"
+          >
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/app/profile">Profile</Link>
+          <Link
+            className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+            to="/app/profile"
+          >
+            Profile
+          </Link>
         </li>
         <li>
-          <Link to="/app/stats">Stats</Link>
+          <Link
+            className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+            to="/app/stats"
+          >
+            Stats
+          </Link>
         </li>
         <li>
-          <Link to="pokemons">Pokemons</Link>
+          <Link
+            className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+            to="pokemons"
+          >
+            Pokemons
+          </Link>
         </li>
       </ul>
       {children}

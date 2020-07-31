@@ -24,7 +24,12 @@ const PokemonLayout = ({ children }) => {
       <ul role="navigation">
         {pokemons.map(pokemon => (
           <li>
-            <Link to={pokemon.slug}>{pokemon.slug}</Link>
+            <Link
+              className="bg-white inline-block py-2 px-4 text-blue-500 hover:text-blue-800 font-semibold"
+              to={pokemon.slug}
+            >
+              {pokemon.slug}
+            </Link>
           </li>
         ))}
       </ul>

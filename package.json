@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "contentful": "^7.14.6",
-    "gatsby": "^2.22.8",
+    "gatsby": "^2.32.11",
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-source-graphql": "^2.6.2",
     "react": "^16.13.1",
